@@ -6,6 +6,7 @@ public class GeometricObject {
 	
 	
 	public GeometricObject(double width, double height, Vertex pos){
+		
 		this.pos=pos;
 		this.width=width;
 		this.height=height;

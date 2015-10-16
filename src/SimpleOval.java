@@ -7,6 +7,9 @@ public class SimpleOval extends GeometricObject {
 	public SimpleOval (double w, double h, double x, double y){
 		super(w,h, new Vertex(x,y));
 	}
+	public SimpleOval (double w, double h){
+		super(w,h, new Vertex(0,0));
+	}
 	
 	@Override public double area(){return Math.PI*width*height/4;}
 

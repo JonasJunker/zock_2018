@@ -9,7 +9,7 @@ public class Square extends GeometricObject{
 		public Square(double w, double x, double y){
 			super(w,w,new Vertex(x,y));
 		}
-		@Override public double area(){return width*height;}
+		@Override public double area(){return width*width;}
 
 		public @Override String toString(){
 			return "Square("+super.toString()+")";

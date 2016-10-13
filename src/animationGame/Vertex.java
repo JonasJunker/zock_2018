@@ -14,20 +14,42 @@ public class Vertex {
 		
 		}
 	
-// Mainmethode	
-	public static void main(String[] args) {
-	
-		Vertex v1 = new Vertex(15,76);
-		Vertex v2 = new Vertex(0,0);
+
 		
-		System.out.println("v1.x= "+v1.x);
-		System.out.println("v2.x= "+v2.x);
-		System.out.println("v1= "+v1);
-		System.out.println(v1.length());
-		System.out.println(v2.length());
- }
+		
+
 	
 	public String toString() {return "("+x+", "+y+")" ;}
 	
 	public double length() {return Math.sqrt(x*x+y*y);}
+	
+	public Vertex skalarMult(double s){
+		return new Vertex(x*s, y*s);}
+	
+	public void skalarMultMod(Vertex v){x=x*v.x; y=y*v.y;}
+	
+	public Vertex add(Vertex v){
+		return new Vertex(v.x+x, v.y+y);}
+	
+	public void addMod(Vertex v){x=x+v.x; y=y+v.y;}
+	
+	public void setX(double x) {this.x = x;}
+	
+	public void setY(double y) {this.y = y;}
+	
+	public double getX() {return x;}
+	
+	public double getY() {return y;}
+	
+	public boolean equals(Object thatObject){
+		if(thatObject instanceof Vertex){
+			Vertex that = (Vertex)thatObject;
+			return this.x==that.x && this.y==that.y;
+		}
+		return false;
+		
+		
+	}
+	
+	
 }

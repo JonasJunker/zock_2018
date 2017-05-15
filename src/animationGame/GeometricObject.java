@@ -13,8 +13,6 @@ public class GeometricObject {
 		this.width=width;
 		this.pos=pos;
 	
-		
-		
 		if(height<0){
 			this.height=-height;
 			pos.y=pos.y-height;
@@ -28,7 +26,30 @@ public class GeometricObject {
 		
 	}
 	public GeometricObject(double height, double width){this(height, width, new Vertex(0,0));}
-		
+	
+	public GeometricObject(double s){this(s, s);}
+	
+	public GeometricObject(){this(10);}
+	
+	public GeometricObject(Vertex pos){this(10,10,pos);}
+	
+	
+	
+	// Methoden
+	
+	public String toString(){
+		return "width="+width+", height="+height+", pos= "+pos;
+	}
+	
+	
+	public double circumference(){
+		return 2*(height+width);
+	}
+	
+	public double area(){
+		return height*width;
+	}
+	
 	
 	
 	public Vertex getPos(){return pos;}

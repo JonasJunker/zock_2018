@@ -86,4 +86,20 @@ public class GeometricObject {
     		}	
     	 return false;
     	}
+    public boolean isLeftOf(GeometricObject that) {
+    	 return this.getPos().x+this.getWidth()<that.getPos().x;
+    }
+    public boolean isAboveOf(GeometricObject that) {
+   	 	 return this.getPos().y+this.getHeight()<that.getPos().y;
+   }
+    
+    public boolean touches(GeometricObject that){
+    	if(this.isLeftOf(that)){return false;}
+    	if(that.isLeftOf(this)){return false;}
+    	if(this.isAboveOf(that)){return false;}
+    	if(that.isAboveOf(this)){return false;}
+    	
+    	return true;
+    }
+    
    }

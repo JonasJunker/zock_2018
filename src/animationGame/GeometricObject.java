@@ -50,7 +50,10 @@ public class GeometricObject {
 		return height*width;
 	}
 	
-	
+	public boolean contains(Vertex v) {
+		return v.x >= pos.x && v.x <= pos.x+width
+		&& v.y >= pos.y && v.y <= pos.y+height;
+	}
 	
 	public Vertex getPos(){return pos;}
 	

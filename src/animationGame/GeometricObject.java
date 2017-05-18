@@ -44,7 +44,7 @@ public class GeometricObject {
 	
 	public double circumference(){
 		return 2*(height+width);
-	}
+	}      
 	
 	public double area(){
 		return height*width;
@@ -55,12 +55,35 @@ public class GeometricObject {
 		&& v.y >= pos.y && v.y <= pos.y+height;
 	}
 	
+	public boolean isLarger(GeometricObject that){
+		return this.area() > that.area();
+	}
+	
 	public Vertex getPos(){return pos;}
 	
 	public double getHeight(){return height;}
 	
 	public double getWidth(){return width;}
 	
+	public void moveTo(double x, double y){
+		moveTo(new Vertex(x,y));
+		}
 	
-	
-}
+	public void moveTo(Vertex that){
+		this.pos=that;
+		}
+	   
+    public void moveTo(){
+    	pos=new Vertex(0,0);
+     }
+    
+    public boolean equals(Object thatObject) {
+    	if (thatObject instanceof GeometricObject) {
+    	 GeometricObject that = (GeometricObject)thatObject;
+    	 	return that.width==this.width
+    			 && this.height==that.height
+    			 && this.pos.equals(that.pos);
+    		}	
+    	 return false;
+    	}
+   }
